@@ -3,6 +3,7 @@ package server
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"os"
 	"project-name/app/interface/container"
 	"project-name/app/transport"
 )
@@ -16,5 +17,5 @@ func StartServer(container container.Container) {
 	setupRouter(transport, app)
 
 	// run gin apps
-	fmt.Println(app.Run())
+	fmt.Println(app.Run(":" + os.Getenv("PORT")))
 }
