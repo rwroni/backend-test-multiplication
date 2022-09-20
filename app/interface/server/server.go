@@ -16,5 +16,5 @@ func StartServer(container container.Container) {
 	setupRouter(transport, app)
 
 	// run gin apps
-	fmt.Println(app.Run("localhost:9000"))
+	fmt.Println(app.Run())
 }
