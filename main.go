@@ -1,18 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"project-name/app/interface/container"
+	"project-name/app/interface/server"
+)
 
 func main() {
-	var n int
-	fmt.Print("Masuk kan bilangan bulat : ")
-	fmt.Scan(&n)
-	i := 1
-
-	for {
-		if i > 99 {
-			break
-		}
-		fmt.Println(n, " X ", i, " = ", n*i)
-		i++
-	}
+	server.StartServer(container.SetupContainer())
 }
